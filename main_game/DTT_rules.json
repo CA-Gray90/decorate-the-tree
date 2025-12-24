@@ -1,0 +1,29 @@
+{
+    "game_intro" : [
+        "Welcome to Decorate the Tree!\n",
+        "In this game you play an Elf that is trying to decorate a Christmas tree.",
+        "The decorations are all scattered around and you must pick all of them up and return them to the tree.",
+        "But be careful, the Grinch is chasing you! If he catches you, you lose!",
+        "If you get all the decorations back to the tree however, you win."
+    ],
+    "gameplay_rules" : [
+        "Here are the gameplay rules:",
+        "- When prompted to move, you can choose from 'up', 'down', 'left' or 'right'",
+        "- You can also just enter the first letters of each move.",
+        "- Your character symbol is a 'E'",
+        "- The Grinch's character symbol is a 'G'",
+        "- The Tree is represented by a 'T'",
+        "- The decorations are any of the following:",
+        "   - '*' : a light",
+        "   - 'o' : a small bauble",
+        "   - 'O' : a large bauble",
+        "   - '@' : the star\n",
+        "- You pick up a decoration by simply landing on top of it",
+        "- You have an inventory and can carry up to 4 decorations at a time.",
+        "- You drop off all decorations you carry by landing ontop of the tree"
+    ],
+    "rules_outro" : [
+        "Those are the basic rules!",
+        "Good luck!"
+    ]
+}
