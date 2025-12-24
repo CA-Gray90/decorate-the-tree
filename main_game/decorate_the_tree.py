@@ -330,9 +330,13 @@ class Field():
             print()
 
             self._tree.place_decorations(decorations)
-            print('Tree now has:')
-            print(self._tree.decorations)
-            print(f'({len(self._tree.decorations)}/{self._total_decorations})')
+    
+    def display_tree_decorations(self):
+        print()
+        print('Tree has:')
+        print(self._tree.decorations)
+        print(f'({len(self._tree.decorations)}/{self._total_decorations})')
+        print()
 
     def check_item_actions(self):
         self._pick_up_item()
@@ -491,7 +495,7 @@ class DTTGame(DisplayMixin):
         self._field.human_move(choice)
     
     def _grinch_turn(self):
-        number_of_moves = random.randrange(3)
+        number_of_moves = random.choice((0, 0, 1, 1, 1, 2))
         while number_of_moves > 0:   
             self._field.grinch_move()
             number_of_moves -= 1
@@ -531,8 +535,7 @@ class DTTGame(DisplayMixin):
             while True:
                 self._clear_and_display_title()
                 self._field.update_positions()
-                print('Number of decorations left: '
-                    f'{len(self._field.decorations)}')
+                self._field.display_tree_decorations()
                 self._display_field()
                 self._display_inventory()
                 self._field.check_item_actions()
