@@ -2,7 +2,6 @@ import random
 import time
 import os
 import ascii_main_title_mod
-import ascii_tree_display_mod
 import json
 import re
 
@@ -514,10 +513,17 @@ class DTTGame(DisplayMixin):
     def _play_again(self):
         return self._yes_or_no('Would you like to play again?')
 
+    def _countdown(self):
+        print('Game will begin in:')
+        for n in range(3, 0, -1):
+            print(n)
+            time.sleep(1)
+
     def play(self):
         os.system('clear')
         self._display_welcome()
         self._display_rules()
+        self._countdown()
         keep_playing = True
         
         while keep_playing:
@@ -538,9 +544,11 @@ class DTTGame(DisplayMixin):
                 self._human_turn()
                 self._grinch_turn()
             self._game_end()
-            if not self._play_again():
+            if self._play_again():
+                self._countdown()
+                self._field.reset()
+            else:
                 keep_playing = False
-            self._field.reset()
 
         self._display_goodbye()
 
